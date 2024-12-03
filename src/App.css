@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --bg: #fafffc;
+  --lgreen: #2ed170;
+  --llgreen: #e2ffee;
+  --dgreen: #013416;
+  --gray: #d8d8d8;
+  --dgray: #555;
+  --dark: #1e1e1e;
+  --black: #000;
+  --roboto: "Roboto", sans-serif;
+  --robotoCon: "Roboto Condensed", sans-serif;
+  --poppins: "Poppins", sans-serif;
+  --montserrat: "Montserrat", sans-serif;
+  --raleway: "Raleway", sans-serif;
+}
+.montserrat {
+  font-family: var(--montserrat);
+}
+.raleway {
+  font-family: var(--raleway);
+}
+.robotoCon {
+  font-family: var(--robotoCon);
+}
+.roboto {
+  font-family: var(--roboto);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+.carousel-wrapper {
+  transition: transform 0.5s ease-in-out;
+}
