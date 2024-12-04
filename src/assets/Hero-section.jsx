@@ -6,9 +6,13 @@ import imageTwo from "./IMAGES/image 2.jpg";
 import imageThree from "./IMAGES/image 3.jpeg";
 import imageFour from "./IMAGES/image 4.jpg";
 import imageFive from "./IMAGES/image 5.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Hero_section = () => {
+  const ref = useRef();
+  const view = useInView(ref, { once: true });
+
   const Slides = [
     {
       id: 1,
@@ -100,78 +104,118 @@ const Hero_section = () => {
                 <p>{Slides[currentSlide].icon}</p>
               </div>
             )}
-            <h1 className="xl:text-[24px] lg:text-[22px] text-[20px] lg:font-semibold font-medium montserrat text-[var(--dgreen)]">
+            <motion.h1
+              className="xl:text-[24px] lg:text-[22px] text-[20px] lg:font-semibold font-medium montserrat text-[var(--dgreen)]"
+              initial={{ x: -45, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
               {Slides[currentSlide].heading}
-            </h1>
-            <p className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]">
+            </motion.h1>
+            <motion.p
+              className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]"
+              initial={{ x: -45, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+            >
               {Slides[currentSlide].body}
-            </p>
-            <p className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]">
+            </motion.p>
+            <motion.p
+              className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]"
+              initial={{ x: -45, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
               {Slides[currentSlide].bodyTwo}
-            </p>
+            </motion.p>
           </section>
 
           <div className="w-full flex items-center justify-start xl:gap-10 lg:gap-8 gap-6">
             {Slides[currentSlide].CTA_one.length <= 0 ? (
               <></>
             ) : (
-              <button className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 underline bg-transparent border-[1px] border-transparent text-[var(--lgreen)] raleway font-medium hover:border-[var(--dgreen)] hover:text-[var(--dgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]">
+              <motion.button
+                className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 underline bg-transparent border-[1px] border-transparent text-[var(--lgreen)] raleway font-medium hover:border-[var(--dgreen)] hover:text-[var(--dgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]"
+                initial={{ y: 45, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
+              >
                 {Slides[currentSlide].CTA_one}
-              </button>
+              </motion.button>
             )}
             {Slides[currentSlide].CTA_two.length <= 0 ? (
               <></>
             ) : (
-              <button className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]">
+              <motion.button
+                className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]"
+                initial={{ y: 45, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              >
                 {Slides[currentSlide].CTA_two}
-              </button>
+              </motion.button>
             )}
           </div>
         </span>
 
-        <span className="xl:w-[550px] lg:w-[500px] 2sm:w-[400px] w-full xl:h-[380px] lg:h-[350px] h-[300px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative">
+        <span className="xl:w-[550px] lg:w-[500px] 2sm:w-[400px] w-full xl:h-[380px] lg:h-[350px] h-[300px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow-md shadow-[#555]">
           <img
             src={Slides[currentSlide].image}
             alt={Slides[currentSlide].heading}
-            className="w-full h-full object-cover duration-1000 hover:scale-[1.05] brightness-90"
+            className="w-full h-full object-cover duration-1000 hover:scale-[1.05] brightness-90 flex items-center justify-center"
           />
 
           <div className="w-fit h-fit flex items-center justify-center gap-3 absolute z-20 lg:bottom-5 bottom-3">
-            <span
+            <motion.span
               className={
                 currentSlide === 0
                   ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
                   : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
-            ></span>
-            <span
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            ></motion.span>
+            <motion.span
               className={
                 currentSlide === 1
                   ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
                   : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
-            ></span>
-            <span
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            ></motion.span>
+            <motion.span
               className={
                 currentSlide === 2
                   ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
                   : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
-            ></span>
-            <span
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            ></motion.span>
+            <motion.span
               className={
                 currentSlide === 3
                   ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
                   : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
-            ></span>
-            <span
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            ></motion.span>
+            <motion.span
               className={
                 currentSlide === 4
                   ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
                   : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
-            ></span>
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            ></motion.span>
           </div>
         </span>
       </div>

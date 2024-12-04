@@ -9,6 +9,7 @@
   --dgray: #555;
   --dark: #1e1e1e;
   --black: #000;
+  --red: red;
   --roboto: "Roboto", sans-serif;
   --robotoCon: "Roboto Condensed", sans-serif;
   --poppins: "Poppins", sans-serif;
@@ -32,7 +33,4 @@
   margin: 0;
   box-sizing: border-box;
   font-family: var(--poppins);
-}
-.carousel-wrapper {
-  transition: transform 0.5s ease-in-out;
 }
