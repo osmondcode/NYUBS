@@ -8,13 +8,19 @@ const About = () => {
   return (
     <section className="w-full min-h-[70vh] lg:px-[8%] px-[5%] flex items-center justify-center ">
       <div className="2sm:w-[90%] w-full flex flex-col-reverse md:flex-row md:items-start items-center justify-evenly gap-7 md:mt-0 mt-[100px]">
-        <span className="xl:w-[450px] lg:w-[400px] 2sm:w-[350px] w-full xl:h-[350px] lg:h-[300px] h-[250px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow-md shadow-[#555]">
+        <motion.span
+          className="xl:w-[450px] lg:w-[400px] 2sm:w-[350px] w-full xl:h-[350px] lg:h-[300px] h-[250px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow shadow-[#666]"
+          initial={{ x: "30px", y: "-20px" }}
+          animate={View ? {} : { x: 0, y: 0}}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="loader"></span>
           <img
             src={image}
             alt="About NYUBS image"
-            className="w-full h-full object-cover brightness-85 hover:scale-[1.05] duration-500"
+            className="w-full h-full object-cover brightness-85 hover:scale-[1.05] duration-500 absolute z-10 top-0 left-0"
           />
-        </span>
+        </motion.span>
 
         <span className="xl:w-[450px] md:w-[350px] sm:w-[80%] w-full xl:h-[350px] h-fit flex flex-col items-start justify-start">
           <motion.div

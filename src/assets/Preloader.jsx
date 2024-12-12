@@ -22,7 +22,7 @@ const Preloader = () => {
           className="xl:w-[35px] w-[27px] xl:h-[35px] h-[27px] object-cover rounded-full cursor-pointer"
         />
         <h2 className="font-semibold blinkTwo text-[14px] lg:text-[16px] raleway">
-          National Youth Enemployent Benefit <br /> Schene
+          National Youth Unemployent Benefit <br /> Schene
         </h2>
       </span>
 

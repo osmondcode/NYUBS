@@ -105,7 +105,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            National Youth Enemployent <br /> Benefit Schene
+            National Youth Unemployent <br /> Benefit Schene
           </motion.h2>
         </span>
 

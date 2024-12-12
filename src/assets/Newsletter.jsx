@@ -118,13 +118,14 @@ const Newsletter = () => {
           animate={Veiw ? { y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          <div className="w-full h-fit mt-[20px] flex flex-col items-center justify-center overflow-hidden">
+          <div className="w-full h-full flex flex-col items-center justify-center overflow-hidden relative">
+            <div className="loader my-[74px]"></div>
             <img
               src={array1[currentIndex].img}
               alt="News image"
-              className="w-full h-[150px] object-cover brightness-90 hover:scale-[1.05] duration-500 cursor-pointer shadow shadow-[#666]"
+              className="w-[95%] h-[150px] object-cover brightness-90 hover:scale-[1.05] duration-500 cursor-pointer shadow shadow-[#666] absolute top-7 left-auto right-auto z-10"
             />
-            <p className="w-full text-[15px] text-justify font-light roboto mt-[15px] text-[var(--dark)]">
+            <p className="w-full text-[15px] text-justify font-light roboto mt-[15px] text-[var(--dark)] h-[160px] overflow-visible">
               {array1[currentIndex].body}
             </p>
           </div>

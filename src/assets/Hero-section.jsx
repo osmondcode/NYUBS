@@ -11,7 +11,7 @@ import { motion, useInView } from "framer-motion";
 
 const Hero_section = () => {
   const ref = useRef();
-  const view = useInView(ref, { once: true });
+  const view = useInView(ref, { twice: true });
 
   const Slides = [
     {
@@ -83,7 +83,7 @@ const Hero_section = () => {
           prevSlide === currentSlide - 1 ? 0 : prevSlide + 1
         );
       }
-    }, 3000);
+    }, 8950);
 
     return () => clearTimeout(timeout);
   }, [currentSlide]);
@@ -97,126 +97,108 @@ const Hero_section = () => {
             {Slides[currentSlide].tagline.length <= 0 ? (
               <></>
             ) : (
-              <div className="w-fit h-fit xl:px-3.5 px-3 xl:py-1.5 py-1 bg-[var(--dgreen)] rounded flex items-center justify-center lg:gap-4 gap-6 text-white capitalize xl:text-[15px] lg:text-[14px] text-[12px] xl:mb-[15px] mb-[10px]">
-                <h2 className="2sm:text-[14px] lg:text-[13px] text-[12px]">
+              <div className="w-fit h-fit xl:px-3.5 px-3 xl:py-1.5 py-1 bg-[var(--dgreen)] rounded flex items-center justify-center lg:gap-4 gap-6 text-white capitalize xl:text-[15px] lg:text-[14px] text-[12px] xl:mb-[15px] mb-[10px] duration-500">
+                <h2 className="2sm:text-[14px] lg:text-[13px] text-[12px]   textSlideUp">
                   {Slides[currentSlide].tagline}
                 </h2>
-                <p>{Slides[currentSlide].icon}</p>
+                <p className="iconSlideUp">{Slides[currentSlide].icon}</p>
               </div>
             )}
-            <motion.h1
-              className="xl:text-[24px] lg:text-[22px] text-[20px] lg:font-semibold font-medium montserrat text-[var(--dgreen)]"
-              initial={{ x: -45, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-            >
+            <h1 className="xl:text-[24px] lg:text-[22px] text-[20px] lg:font-semibold font-medium montserrat text-[var(--dgreen)] headerSlideUp">
               {Slides[currentSlide].heading}
-            </motion.h1>
-            <motion.p
-              className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]"
-              initial={{ x: -45, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-            >
+            </h1>
+            <p className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)] bodySlideUp">
               {Slides[currentSlide].body}
-            </motion.p>
-            <motion.p
-              className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)]"
-              initial={{ x: -45, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-            >
+            </p>
+            <p className="xl:text-[17px] lg:text-[16px] text-[15px] roboto font-light text-justify w-full lg:mt-[20px] mt-[12px] text-[var(--dgray)] bodySlideUp">
               {Slides[currentSlide].bodyTwo}
-            </motion.p>
+            </p>
           </section>
 
           <div className="w-full flex items-center justify-start xl:gap-10 lg:gap-8 gap-6">
             {Slides[currentSlide].CTA_one.length <= 0 ? (
               <></>
             ) : (
-              <motion.button
-                className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 underline bg-transparent border-[1px] border-transparent text-[var(--lgreen)] raleway font-medium hover:border-[var(--dgreen)] hover:text-[var(--dgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]"
-                initial={{ y: 45, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
-              >
+              <button className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 underline bg-transparent border-[1px] border-transparent text-[var(--lgreen)] raleway font-medium hover:border-[var(--dgreen)] hover:text-[var(--dgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px] btnOne_SlideUp">
                 {Slides[currentSlide].CTA_one}
-              </motion.button>
+              </button>
             )}
             {Slides[currentSlide].CTA_two.length <= 0 ? (
               <></>
             ) : (
-              <motion.button
-                className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px]"
-                initial={{ y: 45, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-              >
+              <button className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px] btnTwo_SlideUp">
                 {Slides[currentSlide].CTA_two}
-              </motion.button>
+              </button>
             )}
           </div>
         </span>
 
-        <span className="xl:w-[550px] lg:w-[500px] 2sm:w-[400px] w-full xl:h-[380px] lg:h-[350px] h-[300px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow-md shadow-[#555]">
+        <span className="xl:w-[550px] lg:w-[500px] 2sm:w-[400px] w-full xl:h-[380px] lg:h-[350px] h-[300px] flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow shadow-[#666]">
+          <div className="loader absolute top-auto left-auto right-auto botttom-auto z-5"></div>
+
           <img
             src={Slides[currentSlide].image}
             alt={Slides[currentSlide].heading}
-            className="w-full h-full object-cover duration-1000 hover:scale-[1.05] brightness-90 flex items-center justify-center"
+            className="w-full h-full object-cover duration-1000 hover:scale-[1.05] brightness-90 flex items-center justify-center absolute z-10 top-0 left-0"
           />
 
-          <div className="w-fit h-fit flex items-center justify-center gap-3 absolute z-20 lg:bottom-5 bottom-3">
+          <motion.div
+            className="w-fit h-fit flex items-center justify-center gap-1.5 absolute z-20 bottom-2 bg-black/50 backdrop-blur-md px-3 py-1 rounded-[30px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 7, duration: 0.5 }}
+          >
             <motion.span
               className={
                 currentSlide === 0
-                  ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
-                  : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
+                  ? "w-[8px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
+                  : "w-[8px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
               initial={{ y: 35, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 7, duration: 0.5 }}
             ></motion.span>
             <motion.span
               className={
                 currentSlide === 1
-                  ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
-                  : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
+                  ? "w-[8px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
+                  : "w-[8px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
               initial={{ y: 35, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 7.1, duration: 0.5 }}
             ></motion.span>
             <motion.span
               className={
                 currentSlide === 2
-                  ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
-                  : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
+                  ? "w-[8px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
+                  : "w-[8px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
               initial={{ y: 35, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 7.2, duration: 0.5 }}
             ></motion.span>
             <motion.span
               className={
                 currentSlide === 3
-                  ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
-                  : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
+                  ? "w-[8px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
+                  : "w-[8px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
               initial={{ y: 35, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
+              transition={{ delay: 7.3, duration: 0.5 }}
             ></motion.span>
             <motion.span
               className={
                 currentSlide === 4
-                  ? "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
-                  : "lg:w-[22px] w-[20px] lg:h-[10px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
+                  ? "w-[8px] h-[8px] bg-[var(--lgreen)] rounded-[20px] duration-500"
+                  : "w-[8px] h-[8px] bg-[var(--gray)] rounded-[20px] duration-500"
               }
               initial={{ y: 35, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 7.4, duration: 0.5 }}
             ></motion.span>
-          </div>
+          </motion.div>
         </span>
       </div>
     </section>

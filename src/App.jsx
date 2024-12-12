@@ -18,7 +18,7 @@ function App() {
       setAppear(
         "w-full min-h-screen bg-[var(--bg)] flex flex-col items-center justify-start"
       );
-    }, 6500);
+    }, 300);
   });
   return (
     <section className="w-full min-h-screen bg-[var(--bg)] flex flex-col items-center justify-start">
