@@ -18,6 +18,7 @@ import { useState } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { ImLinkedin2 } from "react-icons/im";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [aboutDrop, setAboutDrop] = useState(false);
@@ -105,7 +106,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            National Youth Unemployent <br /> Benefit Schene
+            National Youth Unemployent <br /> Benefit Scheme
           </motion.h2>
         </span>
 
@@ -143,17 +144,15 @@ const Header = () => {
             </p>
           </motion.button>
 
-          <motion.button
+          <Link
             className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.3 }}
+to="/form"
           >
             REGISTER
             <p className="xl:text-[16px] text-[14px] md:flex hidden">
               <TiUserAdd />
             </p>
-          </motion.button>
+          </Link>
 
           <motion.button
             className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--dgreen)] rounded-[6px] text-[var(--dgreen)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] hover:bg-[var(--dgreen)] hover:text-[var(--bg)] duration-300 raleway"

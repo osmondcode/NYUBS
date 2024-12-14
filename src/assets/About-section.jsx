@@ -10,8 +10,8 @@ const About = () => {
       <div className="2sm:w-[90%] w-full flex flex-col-reverse md:flex-row md:items-start items-center justify-evenly gap-7 md:mt-0 mt-[100px]">
         <motion.span
           className="xl:w-[450px] lg:w-[400px] 2sm:w-[350px] w-full xl:h-[350px] lg:h-[300px] h-[250px] bg-blue-300/50 flex flex-col items-center justify-center gap-3 rounded overflow-hidden relative shadow shadow-[#666]"
-          initial={{ x: "30px", y: "-20px" }}
-          animate={View ? {} : { x: 0, y: 0}}
+          initial={{ x: "-20px", y: "30px" }}
+          animate={View ? { x: 0, y: 0} : {}}
           transition={{ duration: 0.5 }}
         >
           <span className="loader"></span>

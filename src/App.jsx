@@ -1,37 +1,22 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Header from "./assets/Header";
 import Preloader from "./assets/Preloader";
-import Hero_section from "./assets/Hero-section";
-// import Loading from "./assets/LoadingSpinner";
-import About_section from "./assets/About-section";
-import Newsletter from "./assets/Newsletter";
+import HomePage from "./assets/HomePage";
+import Form from "./assets/Forms";
 import Footer from "./assets/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [appear, setAppear] = useState(
-    "w-full min-h-screen bg-[var(--bg)] hidden flex-col items-center justify-start"
-  );
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAppear(
-        "w-full min-h-screen bg-[var(--bg)] flex flex-col items-center justify-start"
-      );
-    }, 300);
-  });
   return (
     <section className="w-full min-h-screen bg-[var(--bg)] flex flex-col items-center justify-start">
       {" "}
       <Preloader />
-      <span className={appear}>
-        {/* <Loading /> */}
-        <Header />
-        <Hero_section />
-        <About_section />
-        <Newsletter />
-        <Footer />
-      </span>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route  path="/form" element={<Form />} />
+      </Routes>
+      </BrowserRouter>
     </section>
   );
 }
