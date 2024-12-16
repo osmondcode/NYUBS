@@ -598,31 +598,29 @@ const Personal_info = ({ handlePageNext }) => {
 
             {/* CURRENT STATS */}
             <div className="w-full h-fit flex flex-col items-start justify-start gap-3 mt-12">
-              <p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]">
+              <p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[15px] text-[14px]">
                 Current Employment Status
               </p>
 
-              <span className="flex flex-col gap-2">
-                <div className="flex items-center justify-start gap-3">
-                  <input type="radio" className="scale-[1.5]" />
-                  <p className="text-[15px] text-[var(--dark)]">
-                    Unemployed
-                  </p>
+              <span className="flex flex-col gap-3">
+                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                  <input type="radio" className="scale-[1.3]" />
+                  <p className="text-[15px] text-[var(--dark)]">Unemployed</p>
                 </div>
-                <div className="flex items-center justify-start gap-3">
-                  <input type="radio" className="scale-[1.5]" />
+                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                  <input type="radio" className="scale-[1.3]" />
                   <p className="text-[15px] text-[var(--dark)]">
                     Under-employed
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-3">
-                  <input type="radio" className="scale-[1.5]" />
+                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                  <input type="radio" className="scale-[1.3]" />
                   <p className="text-[15px] text-[var(--dark)]">
                     Self-employed (But struggling)
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-3">
-                  <input type="radio" className="scale-[1.5]" />
+                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                  <input type="radio" className="scale-[1.3]" />
                   <p className="text-[15px] text-[var(--dark)]">
                     Self-employed (Doing well)
                   </p>
@@ -631,9 +629,8 @@ const Personal_info = ({ handlePageNext }) => {
             </div>
             {/* CURRENT STATS */}
 
-
             {/* EMPLOYMENT SECTION FORM */}
-            <div className="w-full h-fit flex items-start justify-center bg-red-600">
+            <div className="w-full h-fit flex items-start justify-center mt-10">
               <Unemployed />
             </div>
             {/* EMPLOYMENT SECTION FORM */}
