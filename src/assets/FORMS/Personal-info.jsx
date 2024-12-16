@@ -3,16 +3,19 @@ import { TiUser } from "react-icons/ti";
 import { ImCloudUpload } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
+import Unemployed from "./Unemployed"
 
-const Personal_info = ({handlePageNext}) => {
+const Personal_info = ({ handlePageNext }) => {
   const [fN, setFN] = useState(false);
   const handleLabelFN = () => {
     setFN(!fN);
   };
 
-    const ref = useRef(null);
+  const ref = useRef(null);
 
-    const inView = useInView(ref, { twice: true });
+  const inView = useInView(ref, { twice: true });
+
+
 
   return (
     <div className="w-full min-h-[70vh] flex flex-col items-center justify-start sm:px-[30px] px-[15px] md:px-[5%] xl:px-[8%] py-5 mb-10">
@@ -32,42 +35,57 @@ const Personal_info = ({handlePageNext}) => {
         </p>
 
         <div className="w-full flex flex-col lg:gap-3 gap-2 items-center justify-center mt-5">
-          <motion.span className="lg:w-[100px] w-[90px] lg:h-[100px] h-[90px] bg-black/30 rounded-md flex items-center justify-center lg:text-[80px] text-[70px] lg:hover:text-[70px] hover:text-[60px] cursor-pointer hover:opacity-90 duration-200 pt-2 text-[#333]"  initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+          <motion.span
+            className="lg:w-[100px] w-[90px] lg:h-[100px] h-[90px] bg-black/30 rounded-md flex items-center justify-center lg:text-[80px] text-[70px] lg:hover:text-[70px] hover:text-[60px] cursor-pointer hover:opacity-90 duration-200 pt-2 text-[#333]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            ref={ref}
+          >
             <TiUser />
           </motion.span>
 
-          <motion.p className="text-[#555] lg:text-[13px] text-[12px] raleway italic"  initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+          <motion.p
+            className="text-[#555] lg:text-[13px] text-[12px] raleway italic"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            ref={ref}
+          >
             Upload a recent passport-sized photo (JPEG, JPG)
           </motion.p>
 
-          <motion.button className="px-4 py-1 rounded text-[var(--bg)] lg:text-[15.5px] text-[13px] mt-1 bg-[var(--dgreen)] hover:opacity-80 duration-200"  initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+          <motion.button
+            className="px-4 py-1 rounded text-[var(--bg)] lg:text-[15.5px] text-[13px] mt-1 bg-[var(--dgreen)] hover:opacity-80 duration-200"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            ref={ref}
+          >
             Upload
           </motion.button>
         </div>
 
         <div className="w-full flex flex-col gap-2 mt-12">
-          <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"  initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+          <motion.p
+            className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            ref={ref}
+          >
             Full Name
           </motion.p>
 
           {/* NAMES OF USER */}
           <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[100px] gap-x-[70px] gap-y-10 mt-8">
-            <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+            <motion.form
+              className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              ref={ref}
+            >
               <label
                 for="firstname"
                 className={
@@ -87,10 +105,13 @@ const Personal_info = ({handlePageNext}) => {
               />
             </motion.form>
 
-            <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        ref={ref}>
+            <motion.form
+              className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              ref={ref}
+            >
               <label
                 for="Lastname"
                 className={
@@ -110,10 +131,13 @@ const Personal_info = ({handlePageNext}) => {
               />
             </motion.form>
 
-            <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.5 }}
-        ref={ref}>
+            <motion.form
+              className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              ref={ref}
+            >
               <label
                 for="othernames"
                 className={
@@ -138,27 +162,36 @@ const Personal_info = ({handlePageNext}) => {
           {/* GENDER OF USER */}
 
           <div className="w-full flex flex-col gap-2 mt-12">
-            <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+            <motion.p
+              className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              ref={ref}
+            >
               Gender
             </motion.p>
             <form className="flex gap-7">
-              <motion.div className="flex gap-2 items-center justify-start"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.div
+                className="flex gap-2 items-center justify-start"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 <input type="radio" className="bg-black" />
                 <label for="male" className="text-[13.8px]">
                   Male
                 </label>
               </motion.div>
 
-              <motion.div className="flex gap-2 items-center justify-start"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.div
+                className="flex gap-2 items-center justify-start"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <input type="radio" />
                 <label for="female" className="text-[13.8px]">
                   Female
@@ -173,16 +206,22 @@ const Personal_info = ({handlePageNext}) => {
 
           <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[100px] gap-x-[70px] gap-y-10 mt-12">
             <span className="flex flex-col gap-4">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                ref={ref}
+              >
                 Age
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col w-fit h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col w-fit h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="age"
                   className={
@@ -204,16 +243,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                ref={ref}
+              >
                 Date of Birth
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col w-fit h-fit relative text-[#333]"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col w-fit h-fit relative text-[#333]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <input
                   type="date"
                   className="text-[14px] px-4 py-2 rounded w-[200px] outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
@@ -225,16 +270,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0}}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                ref={ref}
+              >
                 National Identification Number (NIN)
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col w-fit h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col w-fit h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="NIN"
                   className={
@@ -256,16 +307,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                ref={ref}
+              >
                 State OF Residence
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-[200px] w-[250px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border] bg-[var(--light)] rounded relative text-[#666]"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-[200px] w-[250px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border] bg-[var(--light)] rounded relative text-[#666]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+                ref={ref}
+              >
                 <select className="w-full h-full flex items-center justify-between bg-transparent">
                   <option value="select state">Select State</option>
                   <option value="Abia">Abia</option>
@@ -281,16 +338,22 @@ const Personal_info = ({handlePageNext}) => {
           {/* RESIDENCE OF USER */}
           <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[100px] gap-x-[70px] gap-y-10 mt-12">
             <span className="flex flex-col gap-4">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 State OF Origin
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-[170px] w-[250px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border)] rounded relative bg-[var(--light)] text-[#666]"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-[170px] w-[250px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border)] rounded relative bg-[var(--light)] text-[#666]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <select className="w-full h-full flex items-center justify-between bg-[var(--light)]">
                   <option value="select state">Select State</option>
                   <option value="Abia">Abia</option>
@@ -302,16 +365,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4 sm:w-fit w-full">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 Home Address
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="Home address"
                   className={
@@ -333,16 +402,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4 sm:w-fit w-full">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 City / Town of Residence
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="town or residence"
                   className={
@@ -368,16 +443,22 @@ const Personal_info = ({handlePageNext}) => {
           {/* CONTACT OF USER */}
           <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[80px] gap-x-[50px] gap-y-10 mt-12">
             <span className="flex flex-col gap-4 opacity-50">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 Local Government Area (LGA)
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-[220px] w-[270px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border)] rounded relative bg-[var(--light)] "   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-[220px] w-[270px] h-[38px] text-[14px] px-4  border-[1px] border-[var(--border)] rounded relative bg-[var(--light)] "
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <select className="w-full h-full flex items-center justify-between bg-[var(--light)]">
                   <option value="select state">Select LGA</option>
                 </select>
@@ -385,16 +466,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4 sm:w-fit w-full">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0}}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 Phone Number
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="town or residence"
                   className={
@@ -416,16 +503,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4 sm:w-fit w-full">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 Email Address
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="town or residence"
                   className={
@@ -447,16 +540,22 @@ const Personal_info = ({handlePageNext}) => {
             </span>
 
             <span className="flex flex-col gap-4 sm:w-fit w-full">
-              <motion.p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"   initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        ref={ref}>
+              <motion.p
+                className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                ref={ref}
+              >
                 Upload CV
               </motion.p>
-              <motion.form className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"   initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        ref={ref}>
+              <motion.form
+                className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                ref={ref}
+              >
                 <label
                   for="upload CV"
                   className={
@@ -488,8 +587,64 @@ const Personal_info = ({handlePageNext}) => {
 
           {/* CONTACT OF USER */}
 
+          <hr className="w-[80%] h-[1.5px] bg-[var(--border)] flex self-center justify-self-center mt-[70px]" />
+
+          {/* EMPLOYMENT SECTION */}
+
+          <div className="w-full items-center justify-center flex flex-col mt-[50px] gap-5">
+            <span className="w-fit h-fit lg:px-3 px-2 py-1 lg:text-[14px] text-[12px] montserrat bg-[var(--dgreen)] lg:rounded-md rounded text-[var(--bg)] font-medium">
+              <p>Employment Status</p>
+            </span>
+
+            {/* CURRENT STATS */}
+            <div className="w-full h-fit flex flex-col items-start justify-start gap-3 mt-12">
+              <p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[14px] text-[13px]">
+                Current Employment Status
+              </p>
+
+              <span className="flex flex-col gap-2">
+                <div className="flex items-center justify-start gap-3">
+                  <input type="radio" className="scale-[1.5]" />
+                  <p className="text-[15px] text-[var(--dark)]">
+                    Unemployed
+                  </p>
+                </div>
+                <div className="flex items-center justify-start gap-3">
+                  <input type="radio" className="scale-[1.5]" />
+                  <p className="text-[15px] text-[var(--dark)]">
+                    Under-employed
+                  </p>
+                </div>
+                <div className="flex items-center justify-start gap-3">
+                  <input type="radio" className="scale-[1.5]" />
+                  <p className="text-[15px] text-[var(--dark)]">
+                    Self-employed (But struggling)
+                  </p>
+                </div>
+                <div className="flex items-center justify-start gap-3">
+                  <input type="radio" className="scale-[1.5]" />
+                  <p className="text-[15px] text-[var(--dark)]">
+                    Self-employed (Doing well)
+                  </p>
+                </div>
+              </span>
+            </div>
+            {/* CURRENT STATS */}
+
+
+            {/* EMPLOYMENT SECTION FORM */}
+            <div className="w-full h-fit flex items-start justify-center bg-red-600">
+              <Unemployed />
+            </div>
+            {/* EMPLOYMENT SECTION FORM */}
+          </div>
+          {/* EMPLOYMENT SECTION */}
+
           <div className="w-full flex items-end justify-end mt-[100px]">
-            <button className="w-fit flex items-center justify-center gap-2 px-5 py-1.5 text-[16px] rounded bg-[#6C757D] text-[var(--bg)] font-semibold" onClick={handlePageNext}>
+            <button
+              className="w-fit flex items-center justify-center gap-2 px-5 py-1.5 text-[16px] rounded bg-[#6C757D] text-[var(--bg)] font-semibold"
+              onClick={handlePageNext}
+            >
               Next
             </button>
           </div>

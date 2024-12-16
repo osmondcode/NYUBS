@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Header from "./FORMS/Forms-header";
 import { GoArrowLeft } from "react-icons/go";
 import Personal from "./FORMS/Personal-info";
-import Employment from "./FORMS/Employment";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
@@ -80,10 +79,8 @@ const Forms = () => {
         Please ensure that all information is filled out accurately and
         completely. Thank you!
       </motion.p>
-      {
-        page === 1 ?
-      <Personal handlePageNext={handlePageNext}/> : <Employment handlePagePrev={handlePagePrev}/>
-      }
+      
+      <Personal handlePageNext={handlePageNext}/> 
 
       <Footer />
     </div>
