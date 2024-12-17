@@ -8,6 +8,7 @@ import imageFour from "./IMAGES/image 4.jpg";
 import imageFive from "./IMAGES/image 5.png";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero_section = () => {
   const ref = useRef();
@@ -88,7 +89,6 @@ const Hero_section = () => {
     return () => clearTimeout(timeout);
   }, [currentSlide]);
 
-  console.log(currentSlide);
   return (
     <section className="w-full min-h-[80vh] lg:px-[8%] px-[5%] flex items-center justify-center ">
       <div className="w-full flex flex-col md:flex-row md:items-start items-center justify-evenly gap-7 md:pt-0 sm:pt-[80px] pt-[40px]">
@@ -126,9 +126,9 @@ const Hero_section = () => {
             {Slides[currentSlide].CTA_two.length <= 0 ? (
               <></>
             ) : (
-              <button className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px] btnTwo_SlideUp">
+              <Link to="/form" className="w-fit h-fit xl:px-2.5 px-2 xl:py-1.5 py-1 bg-[var(--lgreen)] border-[1px] border-[var(--lgreen)] text-[var(--bg)] raleway font-medium hover:bg-[var(--bg)] hover:text-[var(--lgreen)] duration-300 rounded xl:text-[16px] lg:text-[15px] text-[14px] btnTwo_SlideUp">
                 {Slides[currentSlide].CTA_two}
-              </button>
+              </Link>
             )}
           </div>
         </span>

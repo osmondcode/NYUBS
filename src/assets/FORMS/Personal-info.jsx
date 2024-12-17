@@ -91,7 +91,7 @@ const Personal_info = ({ handlePageNext }) => {
           </motion.p>
 
           {/* NAMES OF USER */}
-          <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[100px] gap-x-[70px] gap-y-10 mt-8">
+          <div className="w-full flex items-center justify-between lg:justify-start flex-wrap lg:gap-x-[40px] gap-x-[30px] gap-y-10 mt-8">
             <motion.form
               className="flex items-start justify-start flex-col sm:w-fit w-full h-fit relative"
               initial={{ opacity: 0, y: 10 }}
@@ -111,7 +111,7 @@ const Personal_info = ({ handlePageNext }) => {
               </label>
               <input
                 type="text"
-                className="text-[14px] px-4 py-2 rounded sm:w-[300px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
+                className="text-[14px] px-4 py-2 rounded sm:w-[280px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
                 onMouseLeave={() => {
                   fN === true ? setFN(false) : setFN(true);
                 }}
@@ -137,7 +137,7 @@ const Personal_info = ({ handlePageNext }) => {
               </label>
               <input
                 type="text"
-                className="text-[14px] px-4 py-2 rounded sm:w-[300px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
+                className="text-[14px] px-4 py-2 rounded sm:w-[280px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
                 onMouseLeave={() => {
                   fN === true ? setFN(false) : setFN(true);
                 }}
@@ -163,7 +163,7 @@ const Personal_info = ({ handlePageNext }) => {
               </label>
               <input
                 type="text"
-                className="text-[14px] px-4 py-2 rounded sm:w-[300px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
+                className="text-[14px] px-4 py-2 rounded sm:w-[280px] w-full outline-none border-[1px] border-[var(--border)] bg-[var(--light)]"
                 onMouseLeave={() => {
                   fN === true ? setFN(false) : setFN(true);
                 }}

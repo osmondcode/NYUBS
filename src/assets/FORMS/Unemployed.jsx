@@ -92,7 +92,7 @@ const Unemployed = ({handlePagePrev}) => {
       </div>
       <div className="w-full h-fit flex flex-col items-start justify-start gap-4 mt-12">
         <p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[15px] text-[14px]">
-          What type of jon do you seek ?
+          What type of job do you seek ?
         </p>
 
         <span className="flex flex-col gap-3">

@@ -1,8 +1,18 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+
+
 
 const UnderEmployed = () => {
+  const [fN, setFN] = useState(false);
+  const handleLabelFN = () => {
+    setFN(!fN);
+  };
 
+  const ref = useRef(null);
+
+  const inView = useInView(ref, { twice: true });
 
   return (
     <div className="w-full min-h-[70vh] flex flex-col items-center justify-start mt-10 py-5 border-t-[1.4px] border-[var(--border)]">

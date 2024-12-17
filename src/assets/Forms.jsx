@@ -5,26 +5,28 @@ import Personal from "./FORMS/Personal-info";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
+import SideBar from "./Sidebar";
 
-const Forms = () => {
+const Forms = ({ toggleSidebar, sideBar }) => {
   const ref = useRef(null);
 
   const inView = useInView(ref, { twice: true });
 
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
   const handlePageNext = () => {
     if (page >= 4) {
-      setPage(1)
+      setPage(1);
     } else {
-      setPage( page + 1)
+      setPage(page + 1);
     }
-  }
+  };
   const handlePagePrev = () => {
-    setPage( page - 1)
-  }
+    setPage(page - 1);
+  };
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start gap-2">
-      <Header />
+      {sideBar && <SideBar toggleSidebar={toggleSidebar} />}
+      <Header toggleSidebar={toggleSidebar} />
       {/* Forms */}
 
       <div className="w-full h-fit flex items-center justify-between xl:px-[10%] md:px-[7%] px-[25px] mt-10">
@@ -40,31 +42,25 @@ const Forms = () => {
 
         <div className="w-fit h-full flex items-center justify-between lg:gap-2 gap-1.5">
           <motion.span
-            className={page >= 1 ? "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--dgreen)] rounded-3xl" : "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--gray)] rounded-3xl"}
+            className={
+              page >= 1
+                ? "lg:w-[55px] sm:w-[45px] w-[35px] h-[4px] bg-[var(--dgreen)] rounded-3xl"
+                : "lg:w-[55px] sm:w-[45px] w-[35px] h-[4px] bg-[var(--gray)] rounded-3xl"
+            }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
             ref={ref}
           ></motion.span>
           <motion.span
-            className={page >= 2 ? "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--dgreen)] rounded-3xl" : "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--gray)] rounded-3xl"}
+            className={
+              page >= 2
+                ? "lg:w-[55px] sm:w-[45px] w-[35px] h-[4px] bg-[var(--dgreen)] rounded-3xl"
+                : "lg:w-[55px] sm:w-[45px] w-[35px] h-[4px] bg-[var(--gray)] rounded-3xl"
+            }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            ref={ref}
-          ></motion.span>
-          <motion.span
-            className={page >= 3 ? "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--dgreen)] rounded-3xl" : "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--gray)] rounded-3xl"}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            ref={ref}
-          ></motion.span>
-          <motion.span
-            className={page >= 4 ? "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--dgreen)] rounded-3xl" : "lg:w-[45px] sm:w-[35px] w-[25px] h-[4px] bg-[var(--gray)] rounded-3xl"}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
             ref={ref}
           ></motion.span>
         </div>
@@ -79,8 +75,8 @@ const Forms = () => {
         Please ensure that all information is filled out accurately and
         completely. Thank you!
       </motion.p>
-      
-      <Personal handlePageNext={handlePageNext}/> 
+
+      <Personal handlePageNext={handlePageNext} />
 
       <Footer />
     </div>

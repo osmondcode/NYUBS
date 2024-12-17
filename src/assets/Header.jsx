@@ -20,7 +20,7 @@ import { ImLinkedin2 } from "react-icons/im";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ toggleSidebar }) => {
   const [aboutDrop, setAboutDrop] = useState(false);
   const [serviceDrop, setServiceDrop] = useState(false);
   const [RSADrop, setRSADrop] = useState(false);
@@ -116,12 +116,12 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search Skills, Course, ..."
-              className="px-1 border-none outline-none xl:w-full sm:w-[120px] w-[160px] text-[13px] xl:text-[14px] hidden 2sm:flex bg-transparent"
+              className="px-1 border-none outline-none xl:w-full sm:w-[160px] w-[160px] text-[13px] xl:text-[14px] hidden 2sm:flex bg-transparent"
             />
           </div>
 
           <motion.button
-            className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
+            className="md:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3 }}
@@ -133,7 +133,7 @@ const Header = () => {
           </motion.button>
 
           <motion.button
-            className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
+            className="md:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.3 }}
@@ -145,8 +145,8 @@ const Header = () => {
           </motion.button>
 
           <Link
-            className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
-to="/form"
+            className="md:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--lgreen)] rounded-[6px] text-[var(--bg)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] bg-[var(--lgreen)] duration-300 raleway hover:bg-[var(--bg)] hover:text-[var(--lgreen)]"
+            to="/form"
           >
             REGISTER
             <p className="xl:text-[16px] text-[14px] md:flex hidden">
@@ -155,7 +155,7 @@ to="/form"
           </Link>
 
           <motion.button
-            className="sm:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--dgreen)] rounded-[6px] text-[var(--dgreen)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] hover:bg-[var(--dgreen)] hover:text-[var(--bg)] duration-300 raleway"
+            className="md:flex hidden items-center justify-center gap-2 border-[1px] border-[var(--dgreen)] rounded-[6px] text-[var(--dgreen)] xl:px-2.5 px-1.5 xl:py-1.5 py-1 xl:text-[13.5px] md:text-[13px] text-[12px] hover:bg-[var(--dgreen)] hover:text-[var(--bg)] duration-300 raleway"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.3 }}
@@ -166,18 +166,19 @@ to="/form"
             </p>
           </motion.button>
 
-          <motion.button
-            className="text-[20px] flex sm:hidden p-1 border-[1px] border-transparent hover:border-[var(--dgreen)] text-[var(--dgreen)] duration-200 rounded-sm"
+          <button
+            className="text-[20px] flex md:hidden p-1 border-[1px] border-transparent hover:border-[var(--dgreen)] text-[var(--dgreen)] duration-200 rounded-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3 }}
+            onClick={toggleSidebar}
           >
             <HiMiniBars3BottomRight />
-          </motion.button>
+          </button>
         </span>
       </div>
 
-      <div className="w-full h-fit xl:py-1.5 py-1 sm:flex hidden items-center md:justify-evenly justify-between xl:gap-6 md:gap-4 gap-3 xl:px-[8%] md:px-[5%] px-[15px] bg-[var(--dgreen)] text-[var(--gray)] robotoCon mt-1.5 xl:text-[15px] text-[13px]">
+      <div className="w-full h-fit xl:py-1.5 py-1 md:flex hidden items-center md:justify-evenly justify-between xl:gap-6 md:gap-4 gap-3 xl:px-[8%] md:px-[5%] px-[15px] bg-[var(--dgreen)] text-[var(--gray)] robotoCon mt-1.5 xl:text-[15px] text-[13px]">
         <motion.a
           href="#"
           className="robotoCon font-medium flex items-center justify-center gap-2 text-[var(--lgreen)] underline underline-offset-4"
