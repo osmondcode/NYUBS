@@ -143,8 +143,49 @@ const Unemployed = ({handlePagePrev}) => {
         </p>
 
         <span className="flex items-center justify-center gap-4">
-          <input type="text" placeholder="Add a skill" className=""/>
-          <button>Add</button>
+          <input
+            type="text"
+            placeholder="Add a skill"
+            className="sm:text-[14px] text-[12.5px] sm:px-4 px-2 py-2 rounded sm:w-[250px] w-[200px] outline-none border-[1px] border-[var(--border)] bg-[var(--light)] text-[#666]"
+          />
+          <button className="w-fit flex items-center justify-center gap-2 sm:px-4 px-2 py-2 text-[12.5px] sm:text-[14px] rounded bg-[var(--dgreen)] text-[var(--bg)] font-semibold">
+            Add
+          </button>
+        </span>
+      </div>
+
+      <div className="w-full h-fit flex flex-col items-start justify-start gap-4 mt-12">
+        <p className="text-[var(--dgreen)] sm:mx-4 mx-0 raleway font-semibold lg:text-[15px] text-[14px]">
+          Skill (s)
+        </p>
+
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">IT Skills</p>
+        </span>
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">
+            Entrepreneurial skills
+          </p>
+        </span>
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">Communication skills</p>
+        </span>
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">Leadership skills </p>
+        </span>
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">Technical skills </p>
+        </span>
+        <span className="flex items-center justify-center gap-4 hover:font-semibold hover:text-[var(--dgreen)] duration-200 cursor-pointer">
+          <input type="checkbox" className="scale-[1.3]" />
+          <p className="text-[15px] text-[var(--dark)]">
+            Other <span className="font-light text-[#777]">(Specify)</span>
+          </p>
         </span>
       </div>
     </div>

@@ -3,7 +3,9 @@ import { TiUser } from "react-icons/ti";
 import { ImCloudUpload } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import Unemployed from "./Unemployed"
+import UnemployedForm from "./Unemployed";
+import Under_employed from "./Under-employed";
+
 
 const Personal_info = ({ handlePageNext }) => {
   const [fN, setFN] = useState(false);
@@ -15,6 +17,17 @@ const Personal_info = ({ handlePageNext }) => {
 
   const inView = useInView(ref, { twice: true });
 
+
+  const [formSec, setFormSec] = useState(null)
+  const [Unemployed, setUnemployed] = useState(<UnemployedForm/>)
+  const [UnderEmployed, setUnderEmployed] = useState(<Under_employed/>)
+
+  const handleUnemployed = () => {
+    setFormSec(Unemployed)
+  }
+  const handleUnderEmployed = () => {
+    setFormSec(UnderEmployed)
+  }
 
 
   return (
@@ -603,11 +616,17 @@ const Personal_info = ({ handlePageNext }) => {
               </p>
 
               <span className="flex flex-col gap-3">
-                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                <div
+                  className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
+                  onClick={handleUnemployed}
+                >
                   <input type="radio" className="scale-[1.3]" />
                   <p className="text-[15px] text-[var(--dark)]">Unemployed</p>
                 </div>
-                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
+                <div
+                  className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
+                  onClick={handleUnderEmployed}
+                >
                   <input type="radio" className="scale-[1.3]" />
                   <p className="text-[15px] text-[var(--dark)]">
                     Under-employed
@@ -631,7 +650,7 @@ const Personal_info = ({ handlePageNext }) => {
 
             {/* EMPLOYMENT SECTION FORM */}
             <div className="w-full h-fit flex items-start justify-center mt-10">
-              <Unemployed />
+              {formSec}
             </div>
             {/* EMPLOYMENT SECTION FORM */}
           </div>
