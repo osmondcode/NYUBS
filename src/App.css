@@ -271,6 +271,25 @@
     transform: translateY(-35px);
   }
 }
+.vanish {
+  
+  animation: disappear 6.5s 1 ease-in-out;
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+
+  95.5% {
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+}
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 30px;

@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import Header from "./FORMS/Forms-header";
 import { GoArrowLeft } from "react-icons/go";
 import Personal from "./FORMS/Personal-info";
+import Personal_II from "./FORMS/Personal-info II";
+
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
@@ -14,7 +16,7 @@ const Forms = ({ toggleSidebar, sideBar }) => {
 
   const [page, setPage] = useState(1);
   const handlePageNext = () => {
-    if (page >= 4) {
+    if (page >= 2) {
       setPage(1);
     } else {
       setPage(page + 1);
@@ -76,7 +78,11 @@ const Forms = ({ toggleSidebar, sideBar }) => {
         completely. Thank you!
       </motion.p>
 
-      <Personal handlePageNext={handlePageNext} />
+      {page === 1 ? (
+        <Personal handlePageNext={handlePageNext} />
+      ) : (
+        <Personal_II handlePagePrev={handlePagePrev} />
+      )}
 
       <Footer />
     </div>

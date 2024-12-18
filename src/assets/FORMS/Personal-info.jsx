@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import UnemployedForm from "./Unemployed";
 import Under_employed from "./Under-employed";
+import SelfemployedSForm from "./Self-employed";
+
 
 
 const Personal_info = ({ handlePageNext }) => {
@@ -21,6 +23,10 @@ const Personal_info = ({ handlePageNext }) => {
   const [formSec, setFormSec] = useState(null)
   const [Unemployed, setUnemployed] = useState(<UnemployedForm/>)
   const [UnderEmployed, setUnderEmployed] = useState(<Under_employed/>)
+  const [SelfEmployed, setSelfEmployed] = useState(<SelfemployedSForm />);
+  const [SelfEmployedD, setSelfEmployedD] = useState(<SelfemployedSForm />);
+
+
 
   const handleUnemployed = () => {
     setFormSec(Unemployed)
@@ -28,6 +34,12 @@ const Personal_info = ({ handlePageNext }) => {
   const handleUnderEmployed = () => {
     setFormSec(UnderEmployed)
   }
+    const handleSelfEmployed = () => {
+      setFormSec(SelfEmployed);
+    };
+        const handleSelfEmployedD = () => {
+          setFormSec(SelfEmployedD);
+        };
 
 
   return (
@@ -620,26 +632,66 @@ const Personal_info = ({ handlePageNext }) => {
                   className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
                   onClick={handleUnemployed}
                 >
-                  <input type="radio" className="scale-[1.3]" />
+                  <div className="w-[18px] h-[18px] border-[2.5px] border-[var(--dgreen)] rounded-full flex items-center justify-center">
+                    <span
+                      className={
+                        formSec === Unemployed
+                          ? "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] flex items-center justify-center"
+                          : "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] hidden items-center justify-center"
+                      }
+                    ></span>
+                  </div>
+
                   <p className="text-[15px] text-[var(--dark)]">Unemployed</p>
                 </div>
                 <div
                   className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
                   onClick={handleUnderEmployed}
                 >
-                  <input type="radio" className="scale-[1.3]" />
+                  <div className="w-[18px] h-[18px] border-[2.5px] border-[var(--dgreen)] rounded-full flex items-center justify-center">
+                    <span
+                      className={
+                        formSec === UnderEmployed
+                          ? "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] flex items-center justify-center"
+                          : "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] hidden items-center justify-center"
+                      }
+                    ></span>
+                  </div>
                   <p className="text-[15px] text-[var(--dark)]">
                     Under-employed
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
-                  <input type="radio" className="scale-[1.3]" />
+                <div
+                  className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
+                  onClick={handleSelfEmployed}
+                >
+                  <div className="w-[18px] h-[18px] border-[2.5px] border-[var(--dgreen)] rounded-full flex items-center justify-center">
+                    <span
+                      className={
+                        formSec === SelfEmployed
+                          ? "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] flex items-center justify-center"
+                          : "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] hidden items-center justify-center"
+                      }
+                    ></span>
+                  </div>
                   <p className="text-[15px] text-[var(--dark)]">
                     Self-employed (But struggling)
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200">
-                  <input type="radio" className="scale-[1.3]" />
+
+                <div
+                  className="flex items-center justify-start gap-3 cursor-pointer hover:font-semibold duration-200"
+                  onClick={handleSelfEmployedD}
+                >
+                  <div className="w-[18px] h-[18px] border-[2.5px] border-[var(--dgreen)] rounded-full flex items-center justify-center">
+                    <span
+                      className={
+                        formSec === SelfEmployedD
+                          ? "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] flex items-center justify-center"
+                          : "w-[8px] h-[8px] rounded-full bg-[var(--lgreen)] hidden items-center justify-center"
+                      }
+                    ></span>
+                  </div>
                   <p className="text-[15px] text-[var(--dark)]">
                     Self-employed (Doing well)
                   </p>
