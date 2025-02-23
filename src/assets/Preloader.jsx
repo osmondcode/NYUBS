@@ -23,7 +23,7 @@ const Preloader = () => {
           className="xl:w-[35px] w-[27px] xl:h-[35px] h-[27px] object-cover rounded-full cursor-pointer"
         />
         <h2 className="font-semibold blinkTwo text-[14px] lg:text-[16px] raleway">
-          National Youth Unemployment Benefit (NYUB) <br /> Scheme
+          National Youth Unemployment Benefits (NYUB) <br /> Scheme
         </h2>
       </span>
 
@@ -37,10 +37,10 @@ const Preloader = () => {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="vanish"
+            className="vanish italic"
           >
             A social Welfare program underpinned by the National Youth Register
-            ( NYR) for Unemployment, Under employed and Self Employed, where 63.7 million youths will be impactec through monetary grants, training and civic participation.
+            (NYR) for Unemployment, Under employed and Self Employed, where 63.7 million youths will be impactec through monetary grants, training and civic participation.
           </motion.p>
         
         </motion.span>
