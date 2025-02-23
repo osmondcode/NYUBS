@@ -39,8 +39,7 @@ const Preloader = () => {
             transition={{ delay: 0.3, duration: 1 }}
             className="vanish italic"
           >
-            A social Welfare program underpinned by the National Youth Register
-            (NYR) for Unemployment, Under employed and Self Employed, where 63.7 million youths will be impactec through monetary grants, training and civic participation.
+            A Social Welfare program underpinned by the National Youth Register (NYR) for the Unemployed, Under employed and Self Employed, where 63.7 million youths will be  impacted through  monetary grants, training and civic participation.
           </motion.p>
         
         </motion.span>
